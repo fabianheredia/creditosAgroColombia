@@ -1,4 +1,5 @@
-var margin = {
+var selectDepto = document.getElementById("selDepto"),
+ margin = {
   top: 20,
   right: 80,
   bottom: 130,
@@ -11,28 +12,23 @@ const _urlData = "/data/datos.json";
 
 d3.json(_urlData).then(datos => {
   console.log(datos);
-
+  segundaGraica(datos);
   //Listado de Departamentos y tipos de productor
   var departamentos = datos
     .map(d => d.Departamento)
     .filter((v, i, a) => a.indexOf(v) === i);
+
+  departamentos.map((d,i)=>{
+    let c = document.createElement("option");
+    c.text = d;
+    selectDepto.options.add(c, i);
+  });
   var tiposProductor = datos
     .map(d => d.Tproductor)
     .filter((v, i, a) => a.indexOf(v) === i);
   const anios = datos
     .map(d => d.Anio)
     .filter((v, i, a) => a.indexOf(v) === i);
-
-  //defino como se pinta un alinea
-  var line = d3
-    .line()
-    .curve(d3.curveBasis)
-    .x(function (d) {
-      return x(d.Anio);
-    })
-    .y(function (d) {
-      return y(d.Valor);
-    });
 
   //creo el espacio de trabajo
   var svg = d3
