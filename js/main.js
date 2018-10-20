@@ -8,7 +8,7 @@ var selectDepto = document.getElementById("selDepto"),
 width = 620, height = 500;
 
 //get Data
-const _urlData = "/data/datos.json";
+const _urlData = "https://fabianheredia.github.io/creditosAgroColombia/data/datos.json";
 
 d3.json(_urlData).then(datos => {
   console.log(datos);
