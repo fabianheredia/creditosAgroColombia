@@ -18,7 +18,15 @@ ejecutar la aplicación desde el explorador
 * BulmaJs
 
 # **_Insight:_** :shipit:
-* 
+* En el periodo de 2017 se generaron los mayores montos de créditos, donde predominaron los créditos a pequeños productores
+
+* En 2014, a Bogotá fue otorgado valores atípicos de crédito a grandes productores
+
+* En 2016, Cauca le fue otorgado valores atípicos de crédito a grandes productores
+
+* El amazonas no presenta creditos otorgados
+
+* El departamento del Choco, no presenta mostos de credito considerables con respecto a otros departamentos.
 
 # De donde vienen los Datos
 
@@ -59,17 +67,16 @@ _Analyze -> Consume -> Discover -> Outliers_ | valores extraños en los creditos
 # How
 | Encode | Manipulate | Facet | Reduce |
 | ---|---|---|---|
-|
+|Express | Select |Superimpose| |
+|Separate Order Aling | select | Superimpose||
 
-Encode -> Arrange -> Express
-Map -> Color -> hue
-Manipulate-> Change,Select
+
 
 # Marcas
-Lineas (definir la tendecia de las importaciones)
-Puntos (marcar la importacion en un periodo del tiempo)
+puntos : monto de credito otorgado para el periodo
+barras comparacion entre departamentos
 
 # Canales
-X -> Años de importacion
-Y -> Toneladas de agucatae importado
-Color -> Departamento donde llego el produto importado
+X -> Años credito
+Y -> Valores de creditos en millones de pesos
+Color: definir el tipo de productor

@@ -12,7 +12,7 @@ const _urlData = "/data/datos.json";
 
 d3.json(_urlData).then(datos => {
   console.log(datos);
-  segundaGraica(datos);
+  
   //Listado de Departamentos y tipos de productor
   var departamentos = datos
     .map(d => d.Departamento)
@@ -23,6 +23,7 @@ d3.json(_urlData).then(datos => {
     c.text = d;
     selectDepto.options.add(c, i);
   });
+  selectDepto.getElementsByTagName('option')[1].selected = 'selected';
   var tiposProductor = datos
     .map(d => d.Tproductor)
     .filter((v, i, a) => a.indexOf(v) === i);
@@ -82,7 +83,7 @@ d3.json(_urlData).then(datos => {
         .attr("class", "info")
         .attr("x", d => {return x(d.Anio)+70;})
         .attr("y", d => y(+d.Valor)+10) 
-        .text(d.Valor + " Millones");
+        .text(d.Departamento+": "+d.Valor + " Millones");
     });
     
     svg
@@ -105,4 +106,5 @@ d3.json(_urlData).then(datos => {
         .attr("x", 507)
         .attr("y", 605) 
         .text("Grandes Productores");
+  segundaGraica(datos);
 });
